@@ -1,0 +1,100 @@
+  
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  align-items: center;
+  background:rgb(97, 6, 120) ;
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
+  padding: 2px;
+  width: 100%;
+}
+h1 {
+  position: relative;
+  font-size: 50px;
+  margin-top: 100px;
+  font-style: italic; 
+}
+.winner{
+  position:relative; left: 500px; top: 300px;
+  font-size: 30px;
+  font-style: italic;
+  font-weight: bold;
+  color: green; 
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  height: 700px;
+  position: relative;
+  width: 700px;
+}
+.cell {
+  align-items: center;
+  background:rgb(163, 113, 207);
+  display: flex;
+  height: 100px;
+  justify-content: center;
+  width: 100px;
+}
+.cell::after {
+   background: (247, 215, 128, 0.815);
+   border-radius: 50%;
+   border: 3px solid black;
+   content: '';
+   cursor: pointer;
+   height: 80px;
+   width: 80px;
+ }
+
+ .cell:not(.topRow).Red {
+  background:rgb(163, 113, 207);
+}
+.cell:not(.topRow).Yellow {
+  background:rgb(163, 113, 207);
+}
+.cell:not(.topRow).Red::after{
+  background: red; 
+}
+
+.cell:not(.topRow).Yellow::after {
+  background: yellow; 
+}
+
+.cell.topRow {
+  background:rgb(97, 6, 120);
+}  
+.cell.topRow::after {
+  border: none;
+} 
+.cell.topRow.Yellow::after{
+background: yellow ;
+border: 3px solid black;
+}
+.cell.topRow.Red::after{
+background-color: red;
+border: 3px solid black;
+}
+.cell.win::after{
+  content: "winner";
+  font-size: 20px;
+  color: green;
+  font-style: italic;
+  font-weight: bolder;
+  text-align: justify;
+  padding-top: 50px;
+  padding-left: 18.5px;
+} 
+
+.reload{
+  background-color: rgb(247, 165, 89);
+  position: fixed;
+  left: 58px;
+  top: 260px;
+  font-size: 30px; 
+}
